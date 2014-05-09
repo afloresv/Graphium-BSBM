@@ -1,4 +1,2 @@
-Graphium
-========
-
-**Graph Database Benchmark**
+Berlin Benchmark implementation for Graphium
+============================================
