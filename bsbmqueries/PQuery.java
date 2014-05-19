@@ -30,9 +30,10 @@ public class PQuery {
 		InstanceReader inst = new InstanceReader(4,args[1],1,Integer.parseInt(args[0]));
 
 		String q = "";
-		q += "SELECT DISTINCT ?s\n";
+		q += "SELECT DISTINCT ?s1\n";
 		q += "WHERE { \n";
-		q += "    ?s ?p <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(1)+">\n";
+		q += "    ?s1 ?p1 ?s2 .\n";
+		q += "    ?s2 ?p2 <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(1)+">\n";
 		q += "}";
 
 		System.out.println(q);
