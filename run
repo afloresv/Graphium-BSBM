@@ -1,0 +1,4 @@
+#!/bin/bash
+source lib/lib.sh
+
+java $FLAGS -classpath $LIBS bsbmqueries.$1 $2 $3
