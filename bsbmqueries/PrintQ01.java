@@ -30,7 +30,7 @@ public class PrintQ01 {
 		InstanceReader inst = new InstanceReader(4,args[1],1,Integer.parseInt(args[0]));
 
 		String q = "";
-		q += "PREFIX bsbm-inst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/>\n";
+		q += "PREFIX bsbminst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/>\n";
 		q += "PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>\n";
 		q += "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n";
 		q += "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n";
