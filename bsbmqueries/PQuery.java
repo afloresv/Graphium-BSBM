@@ -24,28 +24,16 @@ import java.io.*;
 
 import ve.usb.ldc.graphium.core.*;
 
-public class PrintQ01 {
+public class PQuery {
 
 	public static void main(String[] args) {
 		InstanceReader inst = new InstanceReader(4,args[1],1,Integer.parseInt(args[0]));
 
 		String q = "";
-		q += "PREFIX bsbminst: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/>\n";
-		q += "PREFIX bsbm: <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/vocabulary/>\n";
-		q += "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n";
-		q += "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n";
-		q += "\n";
-		q += "SELECT DISTINCT ?product ?label\n";
+		q += "SELECT DISTINCT ?s\n";
 		q += "WHERE { \n";
-		q += "    ?product rdfs:label ?label .\n";
-		q += "    ?product a <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType"+inst.get(0)+"> .\n";
-		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(1)+"> .\n";
-		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(2)+"> . \n";
-		q += "    ?product bsbm:productPropertyNumeric1 ?value1 . \n";
-		q += "    FILTER (?value1 > "+inst.get(3)+") \n";
-		q += "}\n";
-		q += "ORDER BY ?label\n";
-		q += "LIMIT 10";
+		q += "    ?s ?p <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(1)+">\n";
+		q += "}";
 
 		System.out.println(q);
 	}
