@@ -38,11 +38,11 @@ public class PrintQ01 {
 		q += "SELECT DISTINCT ?product ?label\n";
 		q += "WHERE { \n";
 		q += "    ?product rdfs:label ?label .\n";
-		q += "    ?product a <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType161> .\n";
-		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature505> .\n";
-		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature25> . \n";
+		q += "    ?product a <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductType"+inst.get(0)+"> .\n";
+		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(1)+"> .\n";
+		q += "    ?product bsbm:productFeature <http://www4.wiwiss.fu-berlin.de/bizer/bsbm/v01/instances/ProductFeature"+inst.get(2)+"> . \n";
 		q += "    ?product bsbm:productPropertyNumeric1 ?value1 . \n";
-		q += "    FILTER (?value1 > 136) \n";
+		q += "    FILTER (?value1 > "+inst.get(3)+") \n";
 		q += "}\n";
 		q += "ORDER BY ?label\n";
 		q += "LIMIT 10";
